@@ -14,7 +14,19 @@ function App() {
     }
   };
 
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <h3>Join a chat</h3>
+      <input
+        type="text"
+        placeholder="Name..."
+        onChange={(event) => {
+          setUsername(event.target.value);
+        }}
+      />
+      <button onClick={joinRoom}>Join room</button>
+    </div>
+  );
 }
 
 export default App;
