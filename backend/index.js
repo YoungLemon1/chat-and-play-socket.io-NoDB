@@ -22,7 +22,7 @@ io.on("connection", (socket) => {
 
   socket.on("join_room", (data) => {
     socket.join(data);
-    console.log(`user ${id} joined room ${data}`);
+    console.log(`user ${socket.id} joined room ${data}`);
   });
   socket.on("disconnect", () => {
     console.log(socket.id + " disconnected");

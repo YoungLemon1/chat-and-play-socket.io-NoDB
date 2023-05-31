@@ -9,7 +9,9 @@ function App() {
   const [room, setRoom] = useState("");
 
   const joinRoom = () => {
-    if (username !== "" && room !== "") socket.emit("join_room", room);
+    if (username !== "" && room !== "") {
+      socket.emit("join_room", room);
+    }
   };
 
   return <div className="App"></div>;
