@@ -17,6 +17,11 @@ function App() {
     }
   };
 
+  const exitRoom = () => {
+    socket.emit("leave_room", room);
+    setShowChat(false);
+  };
+
   return (
     <div className="App">
       {!showChat ? (
@@ -39,7 +44,12 @@ function App() {
           <button onClick={joinRoom}>Join room</button>
         </div>
       ) : (
-        <Chat socket={socket} username={username} room={room}></Chat>
+        <Chat
+          socket={socket}
+          username={username}
+          room={room}
+          exit={exitRoom}
+        ></Chat>
       )}
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ScrollableFeed from "react-scrollable-feed";
-function Chat({ socket, username, room }) {
+function Chat({ socket, username, room, exit }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
   const sendMessage = async () => {
@@ -36,7 +36,10 @@ function Chat({ socket, username, room }) {
     <div className="chat-window">
       <div className="chat-header">
         <p>
-          <button className="back-btn">←</button>🟢 Live chat
+          <button className="back-btn" onClick={exit}>
+            ←
+          </button>
+          🟢 Live chat
         </p>
       </div>
       <div className="chat-body">
