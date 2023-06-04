@@ -35,7 +35,9 @@ function Chat({ socket, username, room }) {
   return (
     <div className="chat-window">
       <div className="chat-header">
-        <p>🟢 Live chat</p>
+        <p>
+          <button className="back-btn">←</button>🟢 Live chat
+        </p>
       </div>
       <div className="chat-body">
         <ScrollableFeed>

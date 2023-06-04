@@ -67,10 +67,30 @@ body {
 }
 .chat-window .chat-header p {
   display: block;
+  width: fit-content;
   padding: 0 1em 0 2em;
   color: #fff;
   font-weight: 700;
   line-height: 45px;
+}
+
+.chat-window .chat-header .back-btn {
+  border: none;
+  background-color: inherit;
+  padding-left: 4px;
+  padding-right: 8px;
+}
+
+.chat-window .chat-header p:hover {
+  cursor: text;
+}
+
+.chat-window .chat-header:hover {
+  cursor: default;
+}
+
+.chat-window .chat-header .back-btn:hover {
+  cursor: pointer;
 }
 
 .chat-window .chat-body {
