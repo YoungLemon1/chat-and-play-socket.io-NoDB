@@ -3,6 +3,7 @@ const app = express();
 import { createServer } from "http";
 import cors from "cors";
 import { Server } from "socket.io";
+import { receiveMessageOnPort } from "worker_threads";
 
 const PORT = 3001;
 
@@ -23,6 +24,9 @@ io.on("connection", (socket) => {
   socket.on("join_room", (data) => {
     socket.join(data);
     console.log(`user ${socket.id} joined room ${data}`);
+  });
+  socket.on("send_message", (data) => {
+    socket.to(data.room).emit("receive_message", data);
   });
   socket.on("disconnect", () => {
     console.log(socket.id + " disconnected");
