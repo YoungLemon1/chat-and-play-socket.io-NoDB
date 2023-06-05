@@ -3,16 +3,18 @@ import ScrollableFeed from "react-scrollable-feed";
 function Chat({ socket, username, room, exit }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
+  const formatTime = (date) => {
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    return `${hours}:${minutes}`;
+  };
   const sendMessage = async () => {
     if (currentMessage !== "") {
       const messageData = {
         room: room,
         author: username,
         message: currentMessage,
-        time:
-          new Date(Date.now()).getHours() +
-          ":" +
-          new Date(Date.now()).getMinutes(),
+        time: formatTime(new Date()),
       };
       await socket.emit("send_message", messageData);
       setMessageList((list) => [...list, messageData]);
