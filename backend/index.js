@@ -5,7 +5,7 @@ import cors from "cors";
 import { Server } from "socket.io";
 import { receiveMessageOnPort } from "worker_threads";
 
-const PORT = 3001;
+const PORT = 3002;
 
 app.use(cors());
 
