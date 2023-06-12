@@ -1,11 +1,11 @@
 import express from "express";
-const app = express();
 import { createServer } from "http";
 import cors from "cors";
 import { Server } from "socket.io";
 import { receiveMessageOnPort } from "worker_threads";
 
-const PORT = 3002;
+const app = express();
+const PORT = 3001;
 
 app.use(cors());
 

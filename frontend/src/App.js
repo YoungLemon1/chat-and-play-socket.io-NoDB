@@ -21,7 +21,7 @@ function App() {
     socket.emit("leave_room", room);
     setShowChat(false);
   };
-
+  s;
   return (
     <div className="App">
       {!showChat ? (
