@@ -2,7 +2,6 @@ import express from "express";
 import { createServer } from "http";
 import cors from "cors";
 import { Server } from "socket.io";
-import { receiveMessageOnPort } from "worker_threads";
 
 const app = express();
 const PORT = 3001;
